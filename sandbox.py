@@ -10,9 +10,10 @@ def collatz(theValue):
         collatz(theValue)
 
 # Adding some additional code down here
-def test(name):
-    print(name)
+def welcome_message(name):
+    print('Welcome, ' + name + '!')
 
+welcome_message('JonBrown')
 print('Enter number:')
 try: collatz(int(input()))
 except: print('Arrowed!!!')
