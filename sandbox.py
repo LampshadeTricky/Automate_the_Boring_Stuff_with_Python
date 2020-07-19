@@ -12,3 +12,7 @@ def collatz(theValue):
 print('Enter number:')
 try: collatz(int(input()))
 except: print('Arrowed!!!')
+
+# Adding some additional code down here
+def test(name):
+    print(name)
