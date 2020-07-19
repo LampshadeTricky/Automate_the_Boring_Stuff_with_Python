@@ -9,10 +9,10 @@ def collatz(theValue):
     if theValue != 1:
         collatz(theValue)
 
-print('Enter number:')
-try: collatz(int(input()))
-except: print('Arrowed!!!')
-
 # Adding some additional code down here
 def test(name):
     print(name)
+
+print('Enter number:')
+try: collatz(int(input()))
+except: print('Arrowed!!!')
