@@ -1,19 +1,33 @@
-# Testing that some of these changes work.
-def collatz(theValue):
-    if theValue % 2 == 0:
-        theValue = theValue // 2
-    else:
-        theValue = theValue * 3 + 1
+#! python3
 
-    print(str(theValue))
-    if theValue != 1:
-        collatz(theValue)
+theInventory={'rope': 1,
+              'torch': 6,
+              'gold coin': 42,
+              'dagger': 1,
+              'arrow': 12
+              }
+dragonLoot = ['gold coin',
+              'dagger',
+              'gold coin',
+              'gold coin',
+              'ruby'
+              ]
+              
+def displayInventory(inventory):
+    totalItems = 0
+    print('Inventory:')
+    for k, v in inventory.items():
+        print(str(v) + ' ' + k)
+        totalItems += v
+    print('Total number of items: ' + str(totalItems))
+    print('')
 
-# Adding some additional code down here
-def welcome_message(name):
-    print('Welcome, ' + name + '!')
+def addToInventory(inventory, addedItems):
+    for item in addedItems:
+        inventory.setdefault(item, 0)
+        inventory[item] +=1
+    return inventory
 
-welcome_message('JonBrown')
-print('Enter number:')
-try: collatz(int(input()))
-except: print('Arrowed!!!')
+displayInventory(theInventory)
+addToInventory(theInventory, dragonLoot)
+displayInventory(theInventory)
