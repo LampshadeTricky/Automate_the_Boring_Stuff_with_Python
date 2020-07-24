@@ -1,0 +1,1 @@
+@pyw.exe C:\Users\jonat\Documents\Python\Sandbox\mcb.pyw %*
