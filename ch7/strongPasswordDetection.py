@@ -13,7 +13,7 @@ def checkPasswordStrength(thePassword):
     searchResults = strongPasswordRegex.search(thePassword)
     return searchResults
 
-passwords = ['gilead', 'roland00', 'Roland00', 'masterlaser', 'Masterlaser00']
+passwords = ['12345', 'Asc11R0ad', 'TheyCallMeStarLord', 'TheyCallMeStarL0rd', 'N01Ca77541MStarL0rd']
 for password in passwords:
     if checkPasswordStrength(password):
         print(f'{password} is good.')
