@@ -6,11 +6,18 @@
 # https://gabrielecirulli.github.io/2048/ and keep sending up, right, down, and 
 # left keystrokes to automatically play the game.
 
+import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 browser = webdriver.Firefox()
 browser.get('https://gabrielecirulli.github.io/2048/')
+
+# Wait a few seconds to dismiss the stupid cookie message
+time.sleep(5)
+browser.find_element_by_tag_name('.cookie-notice-dismiss-button').click()
+
+# Find the gameboard
 gameBoard = browser.find_element_by_tag_name('html')
 
 while True:
@@ -18,3 +25,8 @@ while True:
     gameBoard.send_keys(Keys.RIGHT)
     gameBoard.send_keys(Keys.DOWN)
     gameBoard.send_keys(Keys.LEFT)
+
+    # if the game is over, click the retry button
+    retryButton = browser.find_element_by_tag_name('.retry-button')
+    if retryButton.location['x'] > 0:
+        retryButton.click()
